@@ -3,8 +3,8 @@ package Sudoku;
 import javax.swing.*;
 import java.awt.*;
 
-public class SudokuUI {
-    public static int board[][] = {{3, 0, 6, 5, 0, 8, 4, 0, 0},
+class SudokuUI {
+    static int[][] board = {{3, 0, 6, 5, 0, 8, 4, 0, 0},
             {5, 2, 0, 0, 0, 0, 0, 0, 0},
             {0, 8, 7, 0, 0, 0, 0, 3, 1},
             {0, 0, 3, 0, 1, 0, 0, 8, 0},
@@ -13,9 +13,9 @@ public class SudokuUI {
             {1, 3, 0, 0, 0, 0, 2, 5, 0},
             {0, 0, 0, 0, 0, 0, 0, 7, 4},
             {0, 0, 5, 2, 0, 6, 3, 0, 0}};
-    public static JButton b[][];
+    static JButton[][] b;
 
-    public static void initial() {
+    static void initial() {
         JFrame f = new JFrame("Sudoku");
         JPanel p = new JPanel();
         p.setPreferredSize(new Dimension(500, 500));
@@ -39,6 +39,8 @@ public class SudokuUI {
             }
         }
         f.setVisible(true);
+        f.setResizable(false);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.setLocationRelativeTo(null);
     }
 }

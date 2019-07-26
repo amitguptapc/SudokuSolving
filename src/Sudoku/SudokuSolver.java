@@ -16,7 +16,7 @@ public class SudokuSolver extends SudokuUI {
         solve(board);
     }
 
-    public static boolean solve(int sudoku[][]) {
+    private static boolean solve(int[][] sudoku) {
         if (isSudokuComplete(sudoku)) {
             return true;
         }
@@ -24,7 +24,7 @@ public class SudokuSolver extends SudokuUI {
         int valy = colNo;
         for (int num = 1; num <= 9; num++) {
             try {
-                Thread.sleep(5);
+                Thread.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -43,7 +43,7 @@ public class SudokuSolver extends SudokuUI {
         return false;
     }
 
-    public static boolean isSudokuComplete(int sudoku[][]) {
+    private static boolean isSudokuComplete(int[][] sudoku) {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (sudoku[i][j] == 0) {
@@ -56,7 +56,7 @@ public class SudokuSolver extends SudokuUI {
         return true;
     }
 
-    public static boolean isSafe(int num, int valx, int valy, int sudoku[][]) {
+    private static boolean isSafe(int num, int valx, int valy, int[][] sudoku) {
         for (int i = 0; i < 9; i++) {
             if (sudoku[valx][i] == num) {
                 return false;
